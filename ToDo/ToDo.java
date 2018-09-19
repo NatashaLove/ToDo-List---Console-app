@@ -5,19 +5,19 @@ public class ToDo {
 	public static int count=0;
 	String item;
 
-	void addToDo (String item){
+	public void addToDo (String item){
 		this.item=item;
 	}
-	boolean markDone (){
-		 
+	public void markDone (){
+		  
 	}
 	
-	int getCount () {
+	public int getCount () {
 		return count;
 	}
 	
-	String getToDo () {
-		return 
+	public String getToDo () {
+		return item;
 	}
 
 
