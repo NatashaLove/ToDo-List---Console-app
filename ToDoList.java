@@ -20,19 +20,23 @@ public class  ToDoList {
 		String todo = "";
 		
 		while(next != 'x') {
-			System.out.println();
-			System.out.println("\nShow ToDo list (s)");
-			System.out.println("\nAdd to list (a)");
-			System.out.println("\nDone list item (d)");
-			System.out.println("\nPrint count of ToDos (p)");
-			System.out.println("\nExit list app (x)");
-			System.out.println("\nWhat do you want to do: ");
-			
-			next = inputDevice.next().charAt(0);
-			inputDevice.nextLine(); // need it right after input taking a char or int - or will occupy the next input
+			//all menu is in a separate method - described below
+			next = printMenu();
 			
 			if(next == 's'){
 				// use for loop to print array
+				//for (ToDo thing : itemList) { 
+		// this returns an error - exception, because not all array is populated..
+		/*
+					String print = thing.getToDo();
+					System.out.println(" To do: " + print + " ");  
+				} 
+				*/
+				for (int i=0; i<ToDo.count; i++) {
+					 System.out.println((i+1)+ " TODO: " + itemList[i].getToDo());
+				}
+				
+				
 			} else if (next == 'a'){
 				System.out.println(" Type your ToDo item ");
 				todo = inputDevice.nextLine();
@@ -53,7 +57,24 @@ public class  ToDoList {
 		}
 	
 	}
-	
-	 	
+	// outside of main - create a method and use it in main
+	private static char printMenu (){
+		
+		char next='a';
+		Scanner inputDevice=new Scanner(System.in);
+		
+		System.out.println();
+		System.out.println("\nShow ToDo list (s)");
+		System.out.println("\nAdd to list (a)");
+		System.out.println("\nDone list item (d)");
+		System.out.println("\nPrint count of ToDos (p)");
+		System.out.println("\nExit list app (x)");
+		System.out.println("\nWhat do you want to do: ");
+			
+		next = inputDevice.next().charAt(0);
+		inputDevice.nextLine(); // need it right after input taking a char or int - or will occupy the next input
+		
+		return next;
+	} 	
 	
 }
