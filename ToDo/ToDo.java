@@ -1,15 +1,19 @@
+//ToDo class Definition
+
 package ToDo;
 
 public class ToDo {
 
 	public static int count=0;
-	String item;
+	private String item;
+	private boolean isDone = false;
 
 	public void addToDo (String item){
 		this.item=item;
+		count++;
 	}
 	public void markDone (){
-		  
+		  isDone=true;
 	}
 	
 	public int getCount () {
@@ -19,11 +23,6 @@ public class ToDo {
 	public String getToDo () {
 		return item;
 	}
-
-
-
-
-
 
 
 }
