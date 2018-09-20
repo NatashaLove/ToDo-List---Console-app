@@ -40,14 +40,19 @@ public class  ToDoList {
 			} else if (next == 'a'){
 				System.out.println(" Type your ToDo item ");
 				todo = inputDevice.nextLine();
-				itemList[ToDo.count]= new ToDo(); // empty constructor
-				itemList[ToDo.count].addToDo(todo);
+				itemList[ToDo.count]= new ToDo(todo); //  constructor
+				//itemList[ToDo.count].addToDo(todo);
 				// the same as:
 				//int count = ToDo.count;
 				//itemList[count]= new ToDo(); // empty constructor
 				//itemList[count].addToDo(todo);
 			} else if (next == 'd') {
-				//Mark done
+				
+				System.out.println(" Which item do you want to mark as 'DONE'? ");
+				int d = inputDevice.nextInt();
+				inputDevice.nextLine();
+				itemList[(d-1)].markDone();// d-1 - gets the correct spot number in the array (because before we did +1 - for enumeration)
+						
 			} else if (next == 'p'){
 				
 				System.out.println(" You have "+ ToDo.count + " ToDo items.");

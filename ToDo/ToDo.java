@@ -7,11 +7,18 @@ public class ToDo {
 	public static int count=0;
 	private String item;
 	private boolean isDone = false;
-
-	public void addToDo (String item){
+	
+	public ToDo () {}// deafault constructor
+	//constructor
+	public ToDo (String item) {
 		this.item=item;
-		count++;
+		count ++;
 	}
+
+	// public void addToDo (String item){
+		// this.item=item;
+		// count++;
+	// }
 	public void markDone (){
 		  isDone=true;
 	}
